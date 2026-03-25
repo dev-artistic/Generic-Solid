@@ -1,21 +1,11 @@
-import { createRootRoute, createRoute, createRouter } from '@tanstack/solid-router'
-import Hero from '../pages/hero/hero'
-import Business from '../pages/business/business'
+import { createRootRoute, createRouter } from '@tanstack/solid-router'
+import { publicRoutes } from './publicRoutes'
+import { privateRoutes } from './protectedRoutes'
 
-const rootRoute = createRootRoute()
+export const rootRoute = createRootRoute()
 
-const heroRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/',
-  component: Hero
-})
 
-const businessRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/business',
-  component:Business
-})
 
-const routeTree = rootRoute.addChildren([heroRoute, businessRoute])
+const routeTree = rootRoute.addChildren([...publicRoutes, ...privateRoutes])
 
 export const router = createRouter({ routeTree })
