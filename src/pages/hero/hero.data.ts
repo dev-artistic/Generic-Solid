@@ -8,6 +8,6 @@ export function getLocalJson() {
 export const useData_1=()=> {
   return useQuery(() => ({
     queryKey: ['todos'],
-    queryFn: ()=> Promise.resolve({data:"data"}),
+    queryFn: getLocalJson,
   }))
 }
