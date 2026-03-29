@@ -1,0 +1,125 @@
+/* Core Navbar Styles */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: #ffffff;
+  border-top: 1px solid #e4e4e7;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__logo {
+  flex: 0 0 auto;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #0284c7;
+  text-decoration: none;
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Desktop Items Styling */
+.navbar__desktop-items {
+  display: none; /* Hidden by default (mobile first) */
+  gap: 20px;
+}
+
+/* Menu Trigger Styling */
+.navbar__trigger {
+  appearance: none;
+  background: transparent;
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  color: #3f3f46;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.navbar__trigger:hover {
+  background-color: #f4f4f5;
+}
+
+/* Dropdown Menu Styling */
+.navbar__menu-content {
+  background-color: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  padding: 8px;
+  min-width: 200px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.2s ease-out;
+  outline: none;
+}
+
+.navbar__menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #3f3f46;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.navbar__menu-item:focus {
+  background-color: #f0f9ff;
+  color: #0284c7;
+}
+
+/* Responsive Logic */
+@media (min-width: 768px) {
+  .navbar__desktop-items {
+    display: flex;
+  }
+
+  /* Hide desktop group items inside the menu when on desktop */
+  .navbar__menu-mobile-group {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar__menu-mobile-group {
+    display: block;
+    border-bottom: 1px solid #f4f4f5;
+    margin-bottom: 4px;
+    padding-bottom: 4px;
+  }
+}
+
+/* Menu Animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

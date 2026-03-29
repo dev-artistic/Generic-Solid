@@ -6,11 +6,13 @@ import { SolidQueryDevtools } from "@tanstack/solid-query-devtools"
 const queryClient = new QueryClient()
 
 function App() {
-  return( 
+  return(
+  <>
   <QueryClientProvider client={queryClient}>
-    <SolidQueryDevtools initialIsOpen={false} />
+    {/* <SolidQueryDevtools initialIsOpen={false}/> */}
     <RouterProvider router={router} />
   </QueryClientProvider>
+  </>
   )
 }
 

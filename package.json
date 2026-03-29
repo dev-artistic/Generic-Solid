@@ -9,11 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@kobalte/core": "^0.13.11",
     "@tanstack/solid-query": "^5.95.2",
     "@tanstack/solid-query-devtools": "^5.95.2",
     "@tanstack/solid-router": "^1.168.3",
     "@tanstack/solid-router-devtools": "^1.166.11",
-    "radix-ui": "^1.4.3",
+    "lucide-solid": "^1.7.0",
     "solid-js": "^1.9.11"
   },
   "devDependencies": {
