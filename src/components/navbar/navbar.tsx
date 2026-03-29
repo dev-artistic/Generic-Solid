@@ -1,5 +1,5 @@
 import { DropdownMenu } from "@kobalte/core";
-import { Menu, Info, House } from "lucide-solid";
+import { Menu, Info, House, Briefcase } from "lucide-solid";
 import { For } from "solid-js";
 import "./navbar.css";
 import { RouterLink, RouterNavigation } from "../../router/router";
@@ -11,7 +11,7 @@ export const NavigationComponent = () => {
   const navItems: LinkType[]  = [
     { label: "Home", icon: <House size={20} />, href: "/", desktop: true },
     { label: "Business", icon: <Info size={20} />, href: "/business", desktop: true },
-    // { label: "Projects", icon: <Briefcase size={20} />, href: "/projects", desktop: true },
+    { label: "Projects", icon: <Briefcase size={20} />, href: "/business1", desktop: true },
     // { label: "Profile", icon: <User size={20} />, href: "/profile", desktop: false },
     // { label: "Settings", icon: <Settings size={20} />, href: "/settings", desktop: false },
   ];

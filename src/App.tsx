@@ -1,7 +1,6 @@
 import { RouterProvider } from "@tanstack/solid-router"
 import { router } from "./router/router"
 import { QueryClient, QueryClientProvider } from "@tanstack/solid-query"
-import { SolidQueryDevtools } from "@tanstack/solid-query-devtools"
 
 const queryClient = new QueryClient()
 

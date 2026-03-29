@@ -1,1 +1,21 @@
-export const privateRoutes = []
+import { createRoute, redirect } from '@tanstack/solid-router'
+import { rootRoute } from './router'
+import Business from '../pages/business/business'
+
+export const requireAuth = ({ context, location }: { context: any, location: any }) => {
+  if (!context.user) {
+    throw redirect({ to: '/',
+        search: {
+          redirect: location.href,
+        } })
+  }
+}
+
+const businessRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/business1',
+  component:Business,
+  loader: requireAuth
+})
+
+export const privateRoutes = [businessRoute]

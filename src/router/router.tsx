@@ -5,10 +5,10 @@ import { publicRoutes } from './publicRoutes'
 import { privateRoutes } from './protectedRoutes'
 import type { JSXElement } from 'solid-js'
 import { NavigationComponent } from "../components/navbar/navbar";
-import { createSignal } from 'solid-js'
 
 
-const [user, setUser] = createSignal(null)
+// const [user, setUser] = createSignal(null)
+const user = false;
 export const rootRoute = createRootRoute({
     component: () => (
         <>
@@ -16,9 +16,9 @@ export const rootRoute = createRootRoute({
             <Outlet/>
         </>
     ),
-    context: {
+    context:()=> ({
         user
-    }
+    })
 })
 const routeTree = rootRoute.addChildren([...publicRoutes, ...privateRoutes])
 export const router = createRouter({ routeTree })
